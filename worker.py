@@ -124,7 +124,7 @@ def control_code(target_lat, target_long, curr_lat, curr_long, heading):
     distance = calculate_distance(target_lat, target_long, curr_lat, curr_long)
     
     if(distance < min_dist):
-        retunrn (0.01, 0.01)
+        return (0.01, 0.01)
     
     # Scale forward power down linearly after it gets within "full_speed_dist"
     forward_power = 0
