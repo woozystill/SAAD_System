@@ -266,11 +266,11 @@ def main(shared_data):
                 left = float(shared_data["speedLeft"])
                 right = float(shared_data["speedRight"])
                 if(last_ground_left != left):
-                    last_ground__left = left
+                    last_ground_left = left
                     leftGroundMotor.sendCommand(left)
-                if(last_ground__right != right):
+                if(last_ground_right != right):
                     rightGroundMotor.sendCommand(right)
-                    last_ground__right = right
+                    last_ground_right = right
                 if(last_left != 0.0):
                     leftMotor.sendCommand(0.0)
                     last_left = 0.0
