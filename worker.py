@@ -14,9 +14,13 @@ import math
 from magnetometerLibrary import QMC5883LCompass
 from escControl import ArduinoESC
 
+session = None
+
 def cleanupGPS():
+    global session
     try:
-        session.close()
+       if session is not None:     
+            session.close()
     except Exception:
         pass
         
@@ -174,6 +178,7 @@ def degrees_to_compass(degrees):
     return directions[index]
 
 def main(shared_data):
+    global session
     # Connect to the gpsd daemon
     session = gps.gps(mode=gps.WATCH_ENABLE)
     # Pin configuration
