@@ -9,7 +9,6 @@ import numpy as np
 import sys
 import gps
 import collections
-import serial
 import math
 
 from magnetometerLibrary import QMC5883LCompass
