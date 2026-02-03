@@ -16,8 +16,11 @@ from magnetometerLibrary import QMC5883LCompass
 from escControl import ArduinoESC
 
 def cleanupGPS():
-    session.close()
-
+    try:
+        session.close()
+    except Exception:
+        pass
+        
 def send_command(gps_serial, command):
     """
     Send a command to the GPS module over serial.
